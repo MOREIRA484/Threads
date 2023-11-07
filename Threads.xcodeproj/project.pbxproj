@@ -11,6 +11,7 @@
 		8E014FE62AFA082200A2D1A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E014FE52AFA082200A2D1A0 /* ContentView.swift */; };
 		8E014FE82AFA082400A2D1A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E014FE72AFA082400A2D1A0 /* Assets.xcassets */; };
 		8E014FEB2AFA082400A2D1A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E014FEA2AFA082400A2D1A0 /* Preview Assets.xcassets */; };
+		8E014FFB2AFA0A7E00A2D1A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E014FFA2AFA0A7E00A2D1A0 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8E014FE52AFA082200A2D1A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8E014FE72AFA082400A2D1A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E014FEA2AFA082400A2D1A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8E014FFA2AFA0A7E00A2D1A0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,12 @@
 		8E014FE22AFA082200A2D1A0 /* Threads */ = {
 			isa = PBXGroup;
 			children = (
-				8E014FE32AFA082200A2D1A0 /* ThreadsApp.swift */,
-				8E014FE52AFA082200A2D1A0 /* ContentView.swift */,
+				8E014FF62AFA09C500A2D1A0 /* App */,
+				8E014FF52AFA09C100A2D1A0 /* Core */,
+				8E014FF42AFA09BF00A2D1A0 /* Extensions */,
+				8E014FF32AFA09BD00A2D1A0 /* Model */,
+				8E014FF22AFA09BA00A2D1A0 /* Services */,
+				8E014FF12AFA09B800A2D1A0 /* Utils */,
 				8E014FE72AFA082400A2D1A0 /* Assets.xcassets */,
 				8E014FE92AFA082400A2D1A0 /* Preview Content */,
 			);
@@ -65,6 +71,75 @@
 				8E014FEA2AFA082400A2D1A0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8E014FF12AFA09B800A2D1A0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8E014FF22AFA09BA00A2D1A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8E014FF32AFA09BD00A2D1A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8E014FF42AFA09BF00A2D1A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E014FF52AFA09C100A2D1A0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8E014FF82AFA0A2800A2D1A0 /* Authentication */,
+				8E014FF72AFA0A2600A2D1A0 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8E014FF62AFA09C500A2D1A0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8E014FE32AFA082200A2D1A0 /* ThreadsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8E014FF72AFA0A2600A2D1A0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8E014FE52AFA082200A2D1A0 /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		8E014FF82AFA0A2800A2D1A0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8E014FF92AFA0A6500A2D1A0 /* Views */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8E014FF92AFA0A6500A2D1A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E014FFA2AFA0A7E00A2D1A0 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E014FFB2AFA0A7E00A2D1A0 /* LoginView.swift in Sources */,
 				8E014FE62AFA082200A2D1A0 /* ContentView.swift in Sources */,
 				8E014FE42AFA082200A2D1A0 /* ThreadsApp.swift in Sources */,
 			);
