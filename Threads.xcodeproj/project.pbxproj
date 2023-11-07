@@ -13,6 +13,7 @@
 		8E014FEB2AFA082400A2D1A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E014FEA2AFA082400A2D1A0 /* Preview Assets.xcassets */; };
 		8E014FFB2AFA0A7E00A2D1A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E014FFA2AFA0A7E00A2D1A0 /* LoginView.swift */; };
 		8E014FFF2AFA11B100A2D1A0 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E014FFE2AFA11B100A2D1A0 /* RegistrationView.swift */; };
+		8E0150022AFA150300A2D1A0 /* ThreadsTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0150012AFA150300A2D1A0 /* ThreadsTextFieldModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8E014FEA2AFA082400A2D1A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E014FFA2AFA0A7E00A2D1A0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8E014FFE2AFA11B100A2D1A0 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		8E0150012AFA150300A2D1A0 /* ThreadsTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTextFieldModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		8E014FF12AFA09B800A2D1A0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8E0150002AFA14BC00A2D1A0 /* ViewModifiers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -143,6 +146,14 @@
 				8E014FFE2AFA11B100A2D1A0 /* RegistrationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8E0150002AFA14BC00A2D1A0 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				8E0150012AFA150300A2D1A0 /* ThreadsTextFieldModifier.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 			files = (
 				8E014FFB2AFA0A7E00A2D1A0 /* LoginView.swift in Sources */,
 				8E014FE62AFA082200A2D1A0 /* ContentView.swift in Sources */,
+				8E0150022AFA150300A2D1A0 /* ThreadsTextFieldModifier.swift in Sources */,
 				8E014FE42AFA082200A2D1A0 /* ThreadsApp.swift in Sources */,
 				8E014FFF2AFA11B100A2D1A0 /* RegistrationView.swift in Sources */,
 			);

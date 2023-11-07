@@ -21,54 +21,40 @@ struct RegistrationView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 120, height: 120)
+                .padding()
             
             VStack {
                 TextField("Enter your email", text: $email)
-                    .font(.subheadline)
-                    .padding(12)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 10)
-                    .padding(.top)
+                    .modifier(ThreadsTextFieldModifier())
                 
                 SecureField("Enter your password", text: $passWord)
-                    .font(.subheadline)
-                    .padding(12)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 10)
+                    .modifier(ThreadsTextFieldModifier())
                 
                 TextField("Enter your full name", text: $fullName)
-                    .font(.subheadline)
-                    .padding(12)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 10)
+                    .modifier(ThreadsTextFieldModifier())
                     
                 
                 TextField("Enter your username", text: $userName)
-                    .font(.subheadline)
-                    .padding(12)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding(.horizontal, 10)
+                    .modifier(ThreadsTextFieldModifier())
                    
-                
-                Button {
-                    
-                } label: {
-                    Text("Sing up")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-                        .frame(width: 352, height: 44)
-                        .background(.black)
-                        .cornerRadius(12)
-                       
-                
-                }
-                .padding(.vertical)
             }
+            
+            
+            Button {
+                
+            } label: {
+                Text("Sing up")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                    .frame(width: 352, height: 44)
+                    .background(.black)
+                    .cornerRadius(12)
+                   
+            
+            }
+            .padding(.vertical)
+            
             Spacer()
             
             Divider()
@@ -91,6 +77,7 @@ struct RegistrationView: View {
                 .font(.footnote)
             }
         }
+        .padding(.horizontal, 32)
     }
 }
 

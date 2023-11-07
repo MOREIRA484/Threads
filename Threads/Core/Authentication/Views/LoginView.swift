@@ -27,19 +27,11 @@ struct LoginView: View {
                 
                 VStack {
                     TextField("Enter your email", text: $email)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 10)
-                        .padding(.top)
+                        .autocapitalization(.none)
+                        .modifier(ThreadsTextFieldModifier())
                     
                     SecureField("Enter your password", text: $passWord)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 10)
+                        .modifier(ThreadsTextFieldModifier())
                 }
                 
                 NavigationLink {
