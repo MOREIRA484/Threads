@@ -67,7 +67,8 @@ struct LoginView: View {
                 Divider()
                 
                 NavigationLink {
-                    Text("Register View")
+                   RegistrationView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     Text("Don't have an account ?")
                         .font(.footnote)
