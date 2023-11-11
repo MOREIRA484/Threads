@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class loginViewModel: ObservableObject {
+    
+    @Published   var email = ""
+    @Published   var passWord = ""
+   
+    
+    @MainActor
+    func login() async throws {
+        try await   AuthService.shared.login(withEmail: email, password: passWord)
+    
+    }
+}

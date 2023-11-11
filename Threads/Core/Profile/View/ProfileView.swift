@@ -16,88 +16,104 @@ struct ProfileView: View {
         return UIScreen.main.bounds.width / count - 16
     }
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            //bio and stats
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 14) {
-                    //fullName and username
-                    VStack(alignment: .leading, spacing: 4){
+        NavigationStack {
+            ScrollView(showsIndicators: false) {
+                //bio and stats
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 14) {
+                        //fullName and username
+                        VStack(alignment: .leading, spacing: 4){
+                            
+                            Text("Charles Leclerc")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            
+                            Text("Charles_leclerc")
+                                .font(.subheadline)
+                            
+                        }
                         
-                        Text("Charles Leclerc")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        
-                        Text("Charles_leclerc")
+                        Text("Formula 1 drive for Scuderia Ferrari")
                             .font(.subheadline)
                         
+                        Text("2 followers")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
                     }
                     
-                    Text("Formula 1 drive for Scuderia Ferrari")
-                        .font(.subheadline)
+                    Spacer()
                     
-                    Text("2 followers")
-                        .font(.caption)
-                        .foregroundStyle(.gray)
+                    CircularProfileImageView()
+                    
                 }
                 
-                Spacer()
+                .padding(.horizontal)
                 
-                CircularProfileImageView()
+                Button {
+                    
+                }label: {
+                    Text("Follow")
+                        .frame(width: 350, height: 40)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.white)
+                        .background(Color(.black))
+                        .cornerRadius(8)
+                    
+                }
+                .padding()
                 
-            }
-            
-            .padding(.horizontal)
-            
-            Button {
+                //User content list view
                 
-            }label: {
-                Text("Follow")
-                    .frame(width: 350, height: 40)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-                    .background(Color(.black))
-                    .cornerRadius(8)
-                
-            }
-            .padding()
-            
-            //User content list view
-            
-            VStack {
-                HStack {
-                    ForEach(ProfileThreadFilter.allCases) { filter in
-                        VStack {
-                            Text(filter.title)
-                                .font(.subheadline)
-                                .fontWeight(selectedFilter == filter ? .semibold : .regular)
+                VStack {
+                    HStack {
+                        ForEach(ProfileThreadFilter.allCases) { filter in
+                            VStack {
+                                Text(filter.title)
+                                    .font(.subheadline)
+                                    .fontWeight(selectedFilter == filter ? .semibold : .regular)
+                                
+                                if selectedFilter == filter {
+                                    Rectangle()
+                                        .foregroundStyle(.black)
+                                        .frame(width: filterBarWidth, height: 1)
+                                        .matchedGeometryEffect(id: "item", in: animation)
+                                } else {
+                                    Rectangle()
+                                        .foregroundStyle(.clear)
+                                        .frame(width: filterBarWidth, height: 1)
+                                }
+                            }
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    selectedFilter = filter
+                                }
+                            }
+                        }
+                    }
+                    
+                    LazyVStack {
+                        ForEach(0 ... 10, id: \.self) { thread in
                             
-                            if selectedFilter == filter {
-                                Rectangle()
-                                    .foregroundStyle(.black)
-                                    .frame(width: filterBarWidth, height: 1)
-                                    .matchedGeometryEffect(id: "item", in: animation)
-                            } else {
-                                Rectangle()
-                                    .foregroundStyle(.clear)
-                                    .frame(width: filterBarWidth, height: 1)
-                            }
-                        }
-                        .onTapGesture {
-                            withAnimation(.spring()) {
-                                selectedFilter = filter
-                            }
+                            ThreadCell()
+                            
                         }
                     }
+                    .padding(.vertical, 8)
                 }
                 
-                LazyVStack {
-                    ForEach(0 ... 10, id: \.self) { thread in
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         
-                        ThreadCell()
-                        
+                        Button {
+                            AuthService.shared.signOut()
+                        } label: {
+                            Image(systemName: "line.3.horizontal")
+                                .foregroundStyle(.black)
+                        }
+
+                      
                     }
                 }
-                .padding(.vertical, 8)
             }
         }
     }
